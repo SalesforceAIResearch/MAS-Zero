@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <img src="./figures/mas_zero.png" alt="MAS-Zero Icon" height="45" style="vertical-align: middle;">
-  Absolute Zero: Reinforced Self-play Reasoning with Zero Data
+  MAS-Zero: Designing Multi-Agent Systems with Zero Supervision
 </h1>
 <!-- #  Absolute Zero:  Reinforced Self-play Reasoning with Zero Data -->
 
@@ -241,7 +241,7 @@ TODO -->
   <hr style="height: 3px; background: linear-gradient(90deg, #EF8E8D, #5755A3); border: none; border-radius: 3px;">
 </div>
 
-If you find Absolute Zero Reasoner helpful, please cite us.
+If you find MAS-Zero Reasoner helpful, please cite us.
 
 ```bibtex
 @misc{ke2025maszero,
