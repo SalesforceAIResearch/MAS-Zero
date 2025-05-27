@@ -162,7 +162,7 @@ python -m absolute_zero_reasoner.data_construction.process_code_reasoning_data
   <hr style="height: 3px; background: linear-gradient(90deg, #EF8E8D, #5755A3); border: none; border-radius: 3px;">
 </div>
 
-> **⚠️WARNING⚠️**: The implementations in this repository is very raw and intended for research purposes only. It is not secure for production environments. We plan to update our code to more secure implementations in the future. Your use of our code is at your own discretion and risk.
+> **⚠️WARNING⚠️**: The implementation in this repository is very raw and intended for research purposes only. It is not secure for production environments. We plan to update our code to more secure implementations in the future. Your use of our code is at your own discretion and risk.
 
 
 <!-- ## 🫛 Seeding (Optional)
@@ -178,9 +178,7 @@ bash scripts/seeding/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
 ```bash
 bash scripts/selfplay/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
 ``` -->
-You can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). For SWE-Bench, you need to follow the [SWE-Bench](https://github.com/SWE-bench/SWE-bench) instructions to install the Docker environment first.  
-You can also modify `meta_model` and `node_model` to other LLMs.  
-Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
+You can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). For SWE-Bench, you need to follow the [SWE-Bench](https://github.com/SWE-bench/SWE-bench) instructions to install the Docker environment first. You can also modify `meta_model` and `node_model` to other LLMs. Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
 
 ```bash
 export OPENAI_API_KEY={YourKey}
