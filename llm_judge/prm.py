@@ -76,7 +76,6 @@ def run_judge(prm_model_path, result_path, post_process_path, responses, sampler
         with open(post_process_path, 'w') as json_file:
             json.dump(datas, json_file, indent=4)
 
-    # print('length of datas: ',len(datas))
         
 
     tokenizer = AutoTokenizer.from_pretrained(prm_model_path, trust_remote_code=True)
@@ -91,7 +90,6 @@ def run_judge(prm_model_path, result_path, post_process_path, responses, sampler
     print('updated answer: ',extracted_answers)
     print('problem_list: ',len(problem_list), len(answer_list))
 
-    # print('updated answer: ',extracted_answers, answer_list, problem_list)
 
     # data preprocessing
     processed_data = [prepare_input(problem_list[d_id], answer_list[d_id], tokenizer=tokenizer, step_token="\n") for d_id, d in enumerate(answer_list)]
@@ -120,47 +118,7 @@ def run_judge(prm_model_path, result_path, post_process_path, responses, sampler
         avg_rewards.append(np.mean(step_rewards[reward_id]))
         last_rewards.append(step_rewards[reward_id][-1])
 
-        # print(f'post_processed: {datas[reward_id]["response"][:10]}; reward: {step_rewards[reward_id]}')
-
-    #     print("step_rewards:",step_rewards[reward_id], np.mean(step_rewards[reward_id]))
-
-    # print('avg_rewards: ',avg_rewards)
-    # print('last_rewards: ',last_rewards)
-
-    # chosen_id = avg_rewards.index(max(avg_rewards))
-    # print(f'avg_rewards chosen_id: {chosen_id}; chosen reponse: {datas[chosen_id]}')
 
     chosen_id = last_rewards.index(max(last_rewards))
-    # print(f'last_rewards chosen_id: {chosen_id}; chosen reponse: {datas[chosen_id]}')
 
     return chosen_id
-
-
-
-    # def _agg_orm_vote(x_list: List[str], v_list: List[float], return_reward_idx=False):
-    #     assert len(x_list) == len(v_list)
-    #     x_dict = defaultdict(lambda: 0.0)
-    #     for x, v in zip(x_list, v_list):
-    #         x_dict[x] += v
-
-    #     print('x_list: ',x_list)           
-    #     print('x_dict: ',x_dict)
-
-    #     highest_x = max(x_dict, key=x_dict.get)
-    #     if return_reward_idx:
-    #         idx_list = [i for i, x in enumerate(x_list) if x == highest_x]
-    #         print('idx_list: ',idx_list)
-    #         corresponding_v_list = [v_list[idx] for idx in idx_list]
-    #         print('corresponding_v_list: ',corresponding_v_list)
-    #         idx = corresponding_v_list.index(max(corresponding_v_list))
-    #         return highest_x, idx_list[0]
-    #     return highest_x
-        
-
-    # highest_x, idx = _agg_orm_vote(data_extracted_answers, avg_rewards, return_reward_idx=True)
-    # print(f'avg_rewards chosen_id: {idx}; chosen reponse: {datas[idx]}')
-
-    # highest_x, idx = _agg_orm_vote(data_extracted_answers, last_rewards, return_reward_idx=True)
-    # print(f'last_rewards chosen_id: {idx}; chosen reponse: {datas[idx]}')
-
-

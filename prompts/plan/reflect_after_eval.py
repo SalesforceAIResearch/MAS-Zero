@@ -59,15 +59,3 @@ This is WRONG
 `f'CoT-SC agent ABC, on the purpose of determining changes to Maxwell's'`. 
 This is wrong becuse single qupte is used (Maxwell's) within the sting but single quote is used again for the f-string (f''). This will casue unterminated string error. To correct it, one should use double quote for f-stirng, i.e., `f"CoT-SC agent ABC, on the purpose of determining changes to Maxwell's"`
 """
-
-# 3. You output must guided by the reflection and proposed update of your previous attempts (given in the 'reflection' and 'proposed update' entry in the 'Discovered architecture archive'). The feedback in the reflection can guide your updates for (1) and (2)
-
-
-# To ensure that, explicitly list all this history incorrect answers, i.e., ``Known incorrect answers: ...(previous final answers gives low fitness scores)`` # No need, as the final answer is determiend by the agentic system not the meta-agent itself.
-
-
-# 3. **Fitness**: Your final goal is to optimize the fitness score after updating the architectures and/or task decomposition based on (1) and (2). The fitness is computed based on the final answer in the final response, i.e., the number or option after '\n\nAnswer:'. A low fitness score means that the final answer in the final reponse, given by the proposed architecture and/or task decomposision, is mistaken. You need to update your final answer by improving the architecture and/or task decomposion and ensure that the same mistaken answer does not appear again. Be sure to incorporate this reflection so that the updated architecture and/or task decomposion, informed by your analysis in steps (1) and (2), avoids repeating the same mistaken answers. 
-
-#  for example "sub-task 2 is updated and if it can be answered correctly, we will get ... for sub-task 3 which lead to an improvede final answer"
-
-# (3) If you decide to change the final reponse, list the previous final response, and explain in details how your new task decomposision and architeture can update it. (For example, Previous final reponses are B, C, I updated the instruction of sub-task 3 so that it is known that B and C are not the correct answer). IMPORTANT: Do not try to solve the task yourself, whether an answer is correct or not should be purely relied on the fitness score. DO not make any judgement on what is the correct answer, but only follow the fitness score.

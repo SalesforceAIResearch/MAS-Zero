@@ -232,9 +232,3 @@ Use the knowledge from the archive and inspiration from academic literature to p
 
 Below is the question to solve:\n\n[QUESTION]
 """
-
-#TODO: how about GPT-4o
-# Since the sub-architecture that solve the sub-task cannot see the original question, 
-# (d) Include neccessary information from the orginal question so that the sub-task is sovlable
-#TODO: we need to make the sub-task get enough information, if LLM is not able to put all of them in the instruciton
-# sub_tasks.append(f"Sub-task i, ...(what is the sub-task about), output: thinking - {thinking.content}; answer - {answer.content}")

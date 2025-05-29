@@ -172,8 +172,6 @@ def run_self_verifier(post_process_path, log_path, score_path, responses, sample
 
     extracted_answers = extracted_list
 
-    # print('answer_list: ',answer_list)
-    # print('extracted_answers: ',extracted_answers)
     # filter and sort based on final answer, but give both thought and final answer to the self-judge
 
     print('extracted_answers: ',extracted_answers)
@@ -250,4 +248,3 @@ def run_self_verifier(post_process_path, log_path, score_path, responses, sample
     return selection
 
 
-# (for example, ` Answer ID 1 and 3 arrive at a solution of 201, which suggests a more thorough examination` is WRONG becuase you should not consider whether they arrive to the same solution; `lean towards an answer that is consistently derived or reasone` is WRONG, as you should not consider the consistency among answers)
