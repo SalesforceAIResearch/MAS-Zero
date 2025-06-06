@@ -178,13 +178,6 @@ def run_self_verifier(post_process_path, log_path, score_path, responses, sample
 
     extracted_answers, answer_list = filter_and_sort(extracted_answers, answer_list, dataset)
 
-    #TODO: randomized?
-
-    randomized = True
-    if randomized:
-        combined = list(zip(extracted_answers, answer_list))
-        random.shuffle(combined)
-        extracted_answers, answer_list = zip(*combined)
 
     print('updated_answers: ',extracted_answers)
 

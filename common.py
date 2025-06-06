@@ -180,7 +180,6 @@ def merge_context(msg_list_reflect):
     final_user_content = user_parts[-1] if user_parts else ""
     merged_user_content = "\n\n".join(user_parts[:-1]) + "\n\nNow please do the following:\n\n" + final_user_content + "\n\nIMPORTANT: You must NOT copy any reflection, code or thought from the previous assistant message in the history above. You goal is to improve over them to achieve higher fitness score by updating the reflection, thought and code. Your new reflection, thought and code should be significantly different from those in the history so that it can change output of the code.\nDO NOT do trivial modifications like change the variable or sub-task names or paraphrase the same instruction, as these trivial changes cannot change the final output of your code.\nMake sure your code reflect all the improvements mentioned in your reflection and thought and it is COMPLETE." if len(user_parts) > 1 else final_user_content
 
-    # TODO: can we make it a more pretty single turn?
 
     return [
         system_msg,
@@ -196,21 +195,14 @@ def shorten_context(msg_list):
 
     for msg_id, msg in enumerate(msg_list):
 
-        # print('msg_id: ',msg_id)
-
         if msg['role'] == 'system': 
             msg_list_reflect.append(msg)
         elif msg['role'] == 'assistant':
             if msg_id != assistant_indices[-1]: # if not the last one, remove 2 keys and items to save some context length
                 print(f'remove {msg_id}:  {msg['content'].keys()}')
+                # cut the content due to the context length limit
                 msg_list_reflect.append(
                     {**msg,
-                    # "content": 
-                    #     {
-                    #     k: (v if k not in {"sub_tasks", "agents", "code", "acc", "total_cost"} else "[...] cut off due to context length limit")
-                    #     for k, v in msg["content"].items()                            
-                    #     }
-                    # }
                     "content": {k: v for k, v in msg["content"].items() if k not in {"sub_tasks", "agents", "code", "acc", "total_cost"}}
                     }
                     )
@@ -222,43 +214,10 @@ def shorten_context(msg_list):
             raise NotImplementedError
     
     print('length of msg_list_reflect: ',len(msg_list_reflect))
-    # for msg_id, msg in enumerate(msg_list_reflect):
-    #     print(f'msg in reflect {msg_id}: {msg}')
-    # exit()
+
     return msg_list_reflect
 
 
-# def shorten_context(msg_list):
-#     msg_list_reflect = []
-
-#     assistant_indices = [i for i, msg in enumerate(msg_list) if msg['role'] == 'assistant']
-#     assistant_indices_to_keep = set(assistant_indices[-1:]) #limitted by the mxium length
-
-#     user_indices = [i for i, msg in enumerate(msg_list) if msg['role'] == 'user']
-#     user_indices_to_keep = set(user_indices[-1:]) #limitted by the mxium length
-
-#     for msg_id, msg in enumerate(msg_list):
-#         if msg['role'] == 'system': 
-#                 msg_list_reflect.append(msg)
-#         elif msg['role'] == 'assistant':
-#             if msg_id in assistant_indices_to_keep:
-#                 msg_list_reflect.append(msg)
-#             else:
-#                 print(f'remove assistant context: {msg}')
-
-#         elif msg['role'] == 'user':
-#             if msg_id == len(msg_list)-1 or msg_id == 1: 
-#                 msg_list_reflect.append(msg) #for user round, we only need the first and the last
-#             else: 
-#                 print(f'remove user context: {msg}') 
-#         else:
-#             raise NotImplementedError
-    
-#     print('msg_list_reflect: ',len(msg_list_reflect))
-#     for msg_id, msg in enumerate(msg_list_reflect):
-#         print(f'msg in reflect {msg_id}: {msg}')
-#     # exit()
-#     return msg_list_reflect
 
 
 def check_equality(sampler: SamplerBase, expr1: str, expr2: str, use_oracle_verifier=False, judge_path=None):
