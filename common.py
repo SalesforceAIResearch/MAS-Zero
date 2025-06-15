@@ -57,7 +57,6 @@ from typing import Any
 from blocks.cot import COT
 from blocks.cot_sc import COT_SC
 from blocks.llm_debate import LLM_debate
-from blocks.reflexion_best_of_n import Reflexion_Best_of_N
 import json
 from sampler.chat_completion_sampler import ChatCompletionSampler
 from sampler.together_completion_sampler import ChatCompletionSampler as ToChatCompletionSampler
@@ -199,7 +198,7 @@ def shorten_context(msg_list):
             msg_list_reflect.append(msg)
         elif msg['role'] == 'assistant':
             if msg_id != assistant_indices[-1]: # if not the last one, remove 2 keys and items to save some context length
-                print(f'remove {msg_id}:  {msg['content'].keys()}')
+                print(f"remove {msg_id}:  {msg['content'].keys()}")
                 # cut the content due to the context length limit
                 msg_list_reflect.append(
                     {**msg,
@@ -362,7 +361,6 @@ def get_init_archive(blocks):
         'COT_SC': COT_SC,
         'Reflexion': Reflexion,
         'LLM_debate': LLM_debate,
-        'Reflexion_BEST_OF_N': Reflexion_Best_of_N
     }    
     return [copy.deepcopy(block_map[block]) for block in blocks] # it may be the same architecture, copy to avpod cross modification
 

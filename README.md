@@ -190,13 +190,13 @@ python main_question.py  --dataset workflow_search/aime24 --option plan --meta_m
 
 ## 🔍 Verification
 
-Similarly, you can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). You can also modify `model` to other LLMs. Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
+After the search, we will need to select the best answer from the set of candidate answers. This is the verification step. Similarly, you can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). You can also modify `model` to other LLMs. Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
 
 ```bash
 export OPENAI_API_KEY={YourKey}
 export TOGETHER_API_KEY={YourKey}
 
-python main_judge.py  --dataset aime24 --judge_method self --baseline workflow_search --model gpt-4o_chatgpt --min_sample 0 --max_sample 30 --max_response_per_sample 5 
+python main_judge.py  --dataset aime24 --judge_method self --baseline workflow_search --model gpt-4o_chatgpt --min_sample 0 --max_sample 30 --max_response_per_sample 9 
 
 ```
 

@@ -40,7 +40,6 @@ from llm_judge import self_verifier_list_wise
 from common import EQUALITY_TEMPLATE, MCQ_EQUALITY_TEMPLATE, ANSWER_PATTERN
 
 from sampler.vllm_completion_sampler import ChatCompletionSampler as VllmChatCompletionSampler
-from sampler.sfr_completion_sampler import ChatCompletionSampler as SfrChatCompletionSampler
 from sampler.together_completion_sampler import ChatCompletionSampler as ToChatCompletionSampler
 from shared_vars import set_global, get_global
 
@@ -183,7 +182,7 @@ if __name__ == "__main__":
     majority_vote = args.majority_vote
 
     special_ids = []
-    root_dir = f'/export/xgen-finance/meta_agent/planing/results/question/meta_agent/{args.baseline}'
+    root_dir = f'./results/question/meta_agent/{args.baseline}'
 
     # all results
     if judge_method == 'external':

@@ -24,7 +24,6 @@ from common import ANSWER_PATTERN, shorten_context, merge_context
 import copy
 from prompts.swe.patch_oracle import AGENTLESS_REPAIR
 from utils import  extract_xml
-from prompts.swe.example_meta import EXAMPLE_META
 from shared_vars import set_global, get_global
 
 
@@ -324,8 +323,8 @@ def search(args, task_queue, meta_model, blocks, verifier_model):
     msg_path = os.path.join(args.save_dir, f"{args.expr_name}_{args.option}_msg.json")
     mem_path = os.path.join(args.save_dir, f"{args.expr_name}_{args.option}_mem.json")
     file_path = os.path.join(args.save_dir, f"{args.expr_name}_{args.option}_archive.json")
-    result_path = f'/export/xgen-finance/meta_agent/planing/results/question/meta_agent/{args.dataset}/{meta_model}_{global_node_model}_{verifier_model}.results'
-    oracle_acc_result_path = f'/export/xgen-finance/meta_agent/planing/results/question/meta_agent/{args.dataset}/{meta_model}_{global_node_model}_oracle.results'
+    result_path = f'./results/question/meta_agent/{args.dataset}/{meta_model}_{global_node_model}_{verifier_model}.results'
+    oracle_acc_result_path = f'./results/question/meta_agent/{args.dataset}/{meta_model}_{global_node_model}_oracle.results'
     judge_path = os.path.join(args.save_dir, f"{args.expr_name}_{args.option}_judge")
     reponse_path = os.path.join(args.save_dir, f"{args.expr_name}_{args.option}_reponse")
     os.makedirs(os.path.dirname(judge_path), exist_ok=True)
