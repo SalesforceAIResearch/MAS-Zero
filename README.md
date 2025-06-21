@@ -147,7 +147,6 @@ cd ./
 pip install -r requirements.txt
 pip install datasets
 pip install jinja2
-pip install -e human-eval
 ```
 
 <!-- ## 💾 Data Processing
@@ -241,7 +240,7 @@ TODO -->
   <hr style="height: 3px; background: linear-gradient(90deg, #EF8E8D, #5755A3); border: none; border-radius: 3px;">
 </div>
 
-If you find MAS-Zero Reasoner helpful, please cite us.
+If you find MAS-Zero helpful, please consider starring or citing our work. We would be very grateful!
 
 ```bibtex
 @misc{ke2025maszero,

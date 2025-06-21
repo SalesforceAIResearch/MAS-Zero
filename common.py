@@ -21,7 +21,6 @@ from sampler.chat_completion_sampler import (
     OPENAI_SYSTEM_MESSAGE_CHATGPT,
     ChatCompletionSampler,
 )
-from human_eval.execution import check_correctness  # , unsafe_execute
 import re
 import argparse
 import copy
