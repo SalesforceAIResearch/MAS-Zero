@@ -177,7 +177,7 @@ bash scripts/seeding/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
 ```bash
 bash scripts/selfplay/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
 ``` -->
-You can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). For SWE-Bench, you need to follow the [SWE-Bench](https://github.com/SWE-bench/SWE-bench) instructions to install the Docker environment first. You can also modify `meta_model` and `node_model` to other LLMs. Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
+Search generates candidate answers. You can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). For SWE-Bench, you need to follow the [SWE-Bench](https://github.com/SWE-bench/SWE-bench) instructions to install the Docker environment first. You can also modify `meta_model` and `node_model` to other LLMs. Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
 
 ```bash
 export OPENAI_API_KEY={YourKey}
@@ -240,7 +240,7 @@ TODO -->
   <hr style="height: 3px; background: linear-gradient(90deg, #EF8E8D, #5755A3); border: none; border-radius: 3px;">
 </div>
 
-If you find MAS-Zero helpful, please consider starring or citing our work. We would be very grateful!
+If you find MAS-Zero helpful, please consider starring this repo and citing our work. We would be very grateful!
 
 ```bibtex
 @misc{ke2025maszero,

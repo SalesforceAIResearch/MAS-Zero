@@ -166,7 +166,6 @@ parser.add_argument('--max_sample', type=int)
 parser.add_argument('--min_sample', type=int, default=0)
 parser.add_argument('--max_response_per_sample', type=int)
 parser.add_argument('--model', type=str, default="gpt-4o_chatgpt")
-parser.add_argument('--majority_vote', action='store_true')
 
 args = parser.parse_args()
 
@@ -179,7 +178,6 @@ if __name__ == "__main__":
     min_sample = args.min_sample
     max_response_per_sample = args.max_response_per_sample
     model = args.model
-    majority_vote = args.majority_vote
 
     special_ids = []
     root_dir = f'./results/question/meta_agent/{args.baseline}'
@@ -324,7 +322,7 @@ if __name__ == "__main__":
             log_path = f'{root_dir}/{dataset}/{example_id}/{model}_{model}_{model}_0_plan_sub_self_verifier_log'
             score_path = f'{root_dir}/{dataset}/{example_id}/{model}_{model}_{model}_0_plan_score.json'
 
-            chosen_id = self_verifier_list_wise.run_self_verifier(post_process_path, log_path, score_path, responses, sampler, post_processer, extracted_answers, dataset, max_response_per_sample, majority_vote)
+            chosen_id = self_verifier_list_wise.run_self_verifier(post_process_path, log_path, score_path, responses, sampler, post_processer, extracted_answers, dataset, max_response_per_sample)
 
             print('chosen_id: ',chosen_id) 
             correct_answer = correct_answers[chosen_id]
