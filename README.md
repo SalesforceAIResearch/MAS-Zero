@@ -36,6 +36,8 @@
 
 <!-- ============================================== -->
 
+- **[2026/04/16]** Interested in RL-trained orchestrator? Check out our latest work **<span style="font-variant: small-caps;">MAS-Orchestra</span>** [[Github](https://github.com/SalesforceAIResearch/MAS-Orchestra) | [Project Page](https://vincent950129.github.io/mas-design/mas_r1/) | [arXiv](https://arxiv.org/abs/2601.14652)]
+- **[2025/07/08]** An async version is implemented by the community! [[Github](https://github.com/SparkJiao/MAS-Zero)]
 - **[2025/05/06]** We present the **<span style="font-variant: small-caps;">MAS-Zero</span>** [[Project Page](https://mas-design.github.io/) | [Paper](https://arxiv.org/abs/2505.14996) | [Code](https://github.com/SalesforceAIResearch/MAS-Zero)]
  <!-- | [Model(s)](https://huggingface.co/collections/andrewzh/absolute-zero-reasoner-68139b2bca82afb00bc69e5b) | [Logs](https://wandb.ai/andrewzhao112/AbsoluteZeroReasoner)]. -->
 
@@ -172,7 +174,7 @@ export OUTPUT_CODE_F_SEED_PATH=data/<new_ind_seed_data_name>.jsonl
 bash scripts/seeding/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
 ``` -->
 
-## ♟️ Search
+## ♟️ Step 1: Search
 <!-- 3b models need 2 X 80gb GPUs, 7/8b models need 4 X 80gb, 14b requires 8 X 80gb
 ```bash
 bash scripts/selfplay/<7b|14b|coder3b|coder7b|coder14b|llama>.sh
@@ -187,7 +189,7 @@ python main_question.py  --dataset workflow_search/aime24 --option plan --meta_m
 
 ```
 
-## 🔍 Verification
+## 🔍 Step 2: Verification
 
 After the search, we will need to select the best answer from the set of candidate answers. This is the verification step. Similarly, you can change AIME (`aime24`) to GPQA (`gpqa_diamond`) or SWE-Bench (`swe_bench`). You can also modify `model` to other LLMs. Please refer to the `sampler/` folder (we support GPT, Claude, VLLM, and TogetherAI).
 
