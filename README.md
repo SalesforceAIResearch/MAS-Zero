@@ -1,7 +1,7 @@
 <div align="center">
 
 <h1 align="center">
-  <img src="./figures/mas_zero.png" alt="MAS-Zero Icon" height="45" style="vertical-align: middle;">
+  <!-- <img src="./figures/mas_zero.png" alt="MAS-Zero Icon" height="45" style="vertical-align: middle;"> -->
   MAS-Zero: Designing Multi-Agent Systems with Zero Supervision
 </h1>
 <!-- #  Absolute Zero:  Reinforced Self-play Reasoning with Zero Data -->
@@ -36,9 +36,9 @@
 
 <!-- ============================================== -->
 
-- **[2026/04/16]** Interested in RL-trained orchestrator? Check out our latest work **<span style="font-variant: small-caps;">MAS-Orchestra</span>** [[Github](https://github.com/SalesforceAIResearch/MAS-Orchestra) | [Project Page](https://vincent950129.github.io/mas-design/mas_r1/) | [arXiv](https://arxiv.org/abs/2601.14652)]
-- **[2025/07/08]** An async version is implemented by the community! [[Github](https://github.com/SparkJiao/MAS-Zero)]
-- **[2025/05/06]** We present the **<span style="font-variant: small-caps;">MAS-Zero</span>** [[Project Page](https://mas-design.github.io/) | [Paper](https://arxiv.org/abs/2505.14996) | [Code](https://github.com/SalesforceAIResearch/MAS-Zero)]
+- **[04/16/2026]** Interested in RL-trained orchestrator? Check out our latest work **<span style="font-variant: small-caps;">MAS-Orchestra</span>** [[Github](https://github.com/SalesforceAIResearch/MAS-Orchestra) | [Project Page](https://vincent950129.github.io/mas-design/mas_r1/) | [arXiv](https://arxiv.org/abs/2601.14652)]
+- **[07/08/2025]** An **<span style="font-variant: small-caps;">async version</span>** is implemented by the community! [[Github](https://github.com/SparkJiao/MAS-Zero)]
+- **[05/06/2025]** We present the **<span style="font-variant: small-caps;">MAS-Zero</span>** [[Project Page](https://mas-design.github.io/) | [Paper](https://arxiv.org/abs/2505.14996) | [Code](https://github.com/SalesforceAIResearch/MAS-Zero)]
  <!-- | [Model(s)](https://huggingface.co/collections/andrewzh/absolute-zero-reasoner-68139b2bca82afb00bc69e5b) | [Logs](https://wandb.ai/andrewzhao112/AbsoluteZeroReasoner)]. -->
 
 <!-- ============================================== -->
